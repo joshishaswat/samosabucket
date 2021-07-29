@@ -11,7 +11,7 @@ function Home({ refreshCart }) {
     if (error != "")
       toast.error("Error: " + error, {
         position: "top-right",
-        autoClose: 2500,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -31,9 +31,9 @@ function Home({ refreshCart }) {
     return () => { };
   }, []);
   const refreshCartHandler = () => {
-    toast.success("Cart updated!", {
+    toast.success("Item added! Go to Cart to Checkout", {
       position: "top-right",
-      autoClose: 2500,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -65,7 +65,7 @@ function Home({ refreshCart }) {
         </div>
         <ToastContainer
           position="top-right"
-          autoClose={2500}
+          autoClose={2000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick

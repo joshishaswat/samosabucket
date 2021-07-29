@@ -33,7 +33,7 @@ function AdminOrders({ loginHandler }) {
     if (error !== "")
       toast.error("Error: " + error, {
         position: "top-right",
-        autoClose: 2500,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -251,7 +251,7 @@ function AdminOrders({ loginHandler }) {
         </div>
         <ToastContainer
           position="top-right"
-          autoClose={2500}
+          autoClose={2000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
