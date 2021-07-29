@@ -318,6 +318,7 @@ function Item({
       {
         itemId: _id,
         qty: qty,
+        restaurant: restaurant,
         //samosabucket - momo dumplings
         dip: dip,
         spicy: isSpicy,
@@ -330,7 +331,6 @@ function Item({
         mainItem: mainItem,
         tacoShell: tacoShell,
         //vegan flava cafe
-        restaurant: restaurant,
       },
       {
         withCredentials: true,

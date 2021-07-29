@@ -138,7 +138,7 @@ function Me({ loginHandler, logoutHandler }) {
         setIsLoggedIn(true);
         toast.success("Update done!", {
           position: "top-right",
-          autoClose: 2500,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -157,7 +157,7 @@ function Me({ loginHandler, logoutHandler }) {
           if (err.response.data.error) {
             toast.error("Error: " + err.response.data.error[0].msg, {
               position: "top-right",
-              autoClose: 2500,
+              autoClose: 2000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
@@ -168,7 +168,7 @@ function Me({ loginHandler, logoutHandler }) {
           if (err.response.data.message) {
             toast.error("Error: " + err.response.data.message, {
               position: "top-right",
-              autoClose: 2500,
+              autoClose: 2000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
@@ -187,7 +187,7 @@ function Me({ loginHandler, logoutHandler }) {
       .then((res) => {
         toast.warn("You have been logged out.", {
           position: "top-right",
-          autoClose: 2500,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -199,7 +199,7 @@ function Me({ loginHandler, logoutHandler }) {
       .catch((e) =>
         toast.warn("Error logging out. Try clearing cookies.", {
           position: "top-right",
-          autoClose: 2500,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -498,7 +498,7 @@ function Me({ loginHandler, logoutHandler }) {
         </div>
         <ToastContainer
           position="top-right"
-          autoClose={2500}
+          autoClose={2000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick

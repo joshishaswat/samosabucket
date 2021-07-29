@@ -35,7 +35,7 @@ const CartItem = mongoose.Schema({
   },
   delivery_time: {
     type: String,
-    default: "Saturday",
+    default: "DEFAULT",
   },
 });
 

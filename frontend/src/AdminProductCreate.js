@@ -32,7 +32,7 @@ function AdminProductCreate({ refreshProducts, ...misc }) {
       .then((res) => {
         toast.success("Product added", {
           position: "top-right",
-          autoClose: 2500,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -218,7 +218,7 @@ function AdminProductCreate({ refreshProducts, ...misc }) {
         </div>
         <ToastContainer
           position="top-right"
-          autoClose={2500}
+          autoClose={2000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick

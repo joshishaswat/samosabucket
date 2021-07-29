@@ -93,7 +93,7 @@ function Login({ loginHandler, redirectTo }) {
               <div className="field is-grouped is-grouped-right">
                 <p className="control">
                   <Link className="button is-info" to="/signup">
-                    NEW? CREATE AN ACCOUNT
+                    CREATE AN ACCOUNT
                   </Link>
                 </p>
                 <p className="control">

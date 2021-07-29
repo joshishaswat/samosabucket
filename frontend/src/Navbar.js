@@ -108,7 +108,7 @@ function Navbar({ isAdmin, isLoggedIn, user }) {
       </div>
       <ToastContainer
         position="top-right"
-        autoClose={2500}
+        autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
