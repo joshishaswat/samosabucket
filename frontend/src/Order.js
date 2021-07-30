@@ -163,9 +163,7 @@ function Order({
                   <th>Price</th>
                   <th>Qty</th>
                   <th>Total</th>
-                  <th>Dip</th>
-                  <th>Spicy</th>
-                  <th>Vegetarian</th>
+                  <th>Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -177,9 +175,7 @@ function Order({
                     <td>${x.price}</td>
                     <td>{x.qty}</td>
                     <td>${x.price * x.qty}</td>
-                    {/* <td>${x.dip}</td>
-                    <td>${x.spicy}</td>
-                    <td>${x.vegetarian}</td> */}
+                    {optionsReturn(x)}
                   </tr>
                 ))}
               </tbody>
@@ -195,6 +191,18 @@ function Order({
       </div>
     </div>
   );
+
+  function optionsReturn(x) {
+    let optStr = "";
+
+    Object.keys(x).map((key) => {
+      if (key !== "delivery_time" && key !== "_id" && key !== "itemId" && key !== "qty" && key !== "price" && key !== "item_name"
+        && key !== "name") {
+        optStr += key + ": " + x[key] + ", ";
+      }
+    });
+    return <td>{optStr}</td>;
+  }
 }
 
 export default Order;
