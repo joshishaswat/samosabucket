@@ -202,6 +202,7 @@ function Order({
       }
     });
     return <td>{optStr}</td>;
+    // return <td>{optStr.slice(0, optStr.length - 1)}</td>;
   }
 }
 
