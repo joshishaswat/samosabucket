@@ -102,8 +102,6 @@ function CartItem({ itemId, qty: quantity, delivery_time: dtime, refreshCart, sp
                     if (itemId === "60dfa9e2bf70ac0017547f2f" || itemId === "60dfa9b6bf70ac0017547f2e") { //cakes and bakes
                       return ( 
                         <React.Fragment>
-                          <option> Saturday, July 31 </option>
-                          <option> Sunday, August 01 </option>
                           <option> Saturday, August 07 </option>
                           <option> Sunday, August 08 </option>
                         </React.Fragment>
