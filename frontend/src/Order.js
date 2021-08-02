@@ -183,6 +183,7 @@ function Order({
                 <tr>
                   <th colSpan="4"></th>
                   <th>${amount}</th>
+                  <th colSpan="1"></th>
                 </tr>
               </tfoot>
             </table>
