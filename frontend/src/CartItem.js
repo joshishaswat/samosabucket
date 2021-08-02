@@ -116,7 +116,7 @@ function CartItem({ itemId, qty: quantity, delivery_time: dtime, refreshCart, sp
                     else { //samosabucket
                       return (
                         <React.Fragment>
-                          <option> Sunday, August 01 </option>
+                          <option> Sunday, August 08 </option>
                         </React.Fragment>
                       )
                     } 

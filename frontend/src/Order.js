@@ -201,7 +201,7 @@ function Order({
         optStr += key + ": " + x[key] + ", ";
       }
     });
-    return <td>{optStr}</td>;
+    return <td>{optStr.substring(0, optStr.length - 1)}</td>;
     // return <td>{optStr.slice(0, optStr.length - 1)}</td>;
   }
 }
