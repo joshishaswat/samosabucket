@@ -13,6 +13,7 @@ function AdminOrder({
   amount,
   createdAt,
   _id,
+  delivery_time,
   refreshOrders,
   setError,
   delivery_address: address,
@@ -217,9 +218,8 @@ function AdminOrder({
                   <th>Price</th>
                   <th>Qty</th>
                   <th>Total</th>
-                  <th>Dip</th>
-                  <th>Spicy</th>
-                  <th>Vegetarian</th>
+                  <th>Options</th>
+                  <th>Delivery Date</th>
                 </tr>
               </thead>
               <tbody>
@@ -230,6 +230,8 @@ function AdminOrder({
                     <td>${x.price}</td>
                     <td>{x.qty}</td>
                     <td>${x.price * x.qty}</td>
+                    {optionsReturn(x)}
+                    <td>{x.delivery_time}</td>
                   </tr>
                 ))}
               </tbody>
@@ -237,6 +239,7 @@ function AdminOrder({
                 <tr>
                   <th colSpan="4"></th>
                   <th>${amount}</th>
+                  <th colSpan="2"></th>
                 </tr>
               </tfoot>
             </table>
@@ -256,6 +259,17 @@ function AdminOrder({
       />
     </div>
   );
+  function optionsReturn(x) {
+    let optStr = "";
+
+    Object.keys(x).map((key) => {
+      if (key !== "delivery_time" && key !== "_id" && key !== "itemId" && key !== "qty" && key !== "price" && key !== "item_name"
+        && key !== "name") {
+        optStr += key + ": " + x[key] + ", ";
+      }
+    });
+    return <td>{optStr}</td>;
+  }
 }
 
 export default AdminOrder;

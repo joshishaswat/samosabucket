@@ -9,6 +9,7 @@ function Order({
   amount,
   createdAt,
   _id,
+  delivery_time,
   userId,
   refreshOrders,
   setError,
@@ -164,6 +165,7 @@ function Order({
                   <th>Qty</th>
                   <th>Total</th>
                   <th>Options</th>
+                  <th>Delivery Date</th>
                 </tr>
               </thead>
               <tbody>
@@ -176,6 +178,7 @@ function Order({
                     <td>{x.qty}</td>
                     <td>${x.price * x.qty}</td>
                     {optionsReturn(x)}
+                    <td>{x.delivery_time}</td>
                   </tr>
                 ))}
               </tbody>
@@ -183,7 +186,7 @@ function Order({
                 <tr>
                   <th colSpan="4"></th>
                   <th>${amount}</th>
-                  <th colSpan="1"></th>
+                  <th colSpan="2"></th>
                 </tr>
               </tfoot>
             </table>
@@ -203,7 +206,6 @@ function Order({
       }
     });
     return <td>{optStr.substring(0, optStr.length - 1)}</td>;
-    // return <td>{optStr.slice(0, optStr.length - 1)}</td>;
   }
 }
 
