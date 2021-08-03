@@ -110,7 +110,6 @@ function CartItem({ itemId, qty: quantity, delivery_time: dtime, refreshCart, sp
                       return ( 
                         <React.Fragment>
                           <option> Friday, August 06 </option>
-                          <option> Saturday, August 07 </option>
                         </React.Fragment>
                     );
                     } 
