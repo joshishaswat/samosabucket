@@ -104,6 +104,8 @@ function CartItem({ itemId, qty: quantity, delivery_time: dtime, refreshCart, sp
                         <React.Fragment>
                           <option> Saturday, August 07 </option>
                           <option> Sunday, August 08 </option>
+                          <option> Saturday, August 14 </option>
+                          <option> Sunday, August 15 </option>
                         </React.Fragment>
                     );
                     } else if (itemId === "60dcf34954590a0017027dd4" || itemId === "60dcf48854590a0017027dd5") { //vegan flava
