@@ -9,6 +9,7 @@ function Order({
   amount,
   createdAt,
   _id,
+  delivery_time,
   userId,
   refreshOrders,
   setError,
@@ -163,9 +164,8 @@ function Order({
                   <th>Price</th>
                   <th>Qty</th>
                   <th>Total</th>
-                  <th>Dip</th>
-                  <th>Spicy</th>
-                  <th>Vegetarian</th>
+                  <th>Options</th>
+                  <th>Delivery Date</th>
                 </tr>
               </thead>
               <tbody>
@@ -177,9 +177,8 @@ function Order({
                     <td>${x.price}</td>
                     <td>{x.qty}</td>
                     <td>${x.price * x.qty}</td>
-                    {/* <td>${x.dip}</td>
-                    <td>${x.spicy}</td>
-                    <td>${x.vegetarian}</td> */}
+                    {optionsReturn(x)}
+                    <td>{x.delivery_time}</td>
                   </tr>
                 ))}
               </tbody>
@@ -187,6 +186,7 @@ function Order({
                 <tr>
                   <th colSpan="4"></th>
                   <th>${amount}</th>
+                  <th colSpan="2"></th>
                 </tr>
               </tfoot>
             </table>
@@ -195,6 +195,18 @@ function Order({
       </div>
     </div>
   );
+
+  function optionsReturn(x) {
+    let optStr = "";
+
+    Object.keys(x).map((key) => {
+      if (key !== "delivery_time" && key !== "_id" && key !== "itemId" && key !== "qty" && key !== "price" && key !== "item_name"
+        && key !== "name") {
+        optStr += key + ": " + x[key] + ", ";
+      }
+    });
+    return <td>{optStr.substring(0, optStr.length - 1)}</td>;
+  }
 }
 
 export default Order;

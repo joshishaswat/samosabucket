@@ -20,7 +20,7 @@ function Navbar({ isAdmin, isLoggedIn, user }) {
     >
       <div className="navbar-brand">
         <Link className="navbar-item" to="/">
-          <img src={logo} width="180" height="20" alt="CloudEats.app Logo" />
+          <img src={logo} width="160" height="20" alt="CloudEats.app Logo" />
         </Link>
 
         <span
