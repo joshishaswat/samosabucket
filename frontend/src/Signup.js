@@ -37,7 +37,7 @@ function Signup({ loginHandler, redirectTo }) {
   };
 
   const emailChange = (e) => {
-    setEmail(e.target.value);
+    setEmail(e.target.value.toLowerCase());
   };
   const phoneChange = (e) => {
     setPhone(e.target.value);

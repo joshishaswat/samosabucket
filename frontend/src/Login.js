@@ -11,7 +11,7 @@ function Login({ loginHandler, redirectTo }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const emailChange = (e) => {
-    setEmail(e.target.value);
+    setEmail(e.target.value.toLowerCase());
   };
 
   const passwordChange = (e) => {
