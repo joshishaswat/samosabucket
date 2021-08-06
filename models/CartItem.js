@@ -37,6 +37,9 @@ const CartItem = mongoose.Schema({
     type: String,
     default: "DEFAULT",
   },
+  other: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("cartitem", CartItem);

@@ -37,6 +37,10 @@ function Item({
   const vegetarianChange = () => {
     isVegetarian = !isVegetarian;
   };
+  let other = "";
+  const handleOther = (e) => {
+    other = e.target.value;
+  };
   //Samosabucket - momo dumplings
 
   //Samosabucket - chicken tikka
@@ -89,6 +93,10 @@ function Item({
             </select>
           </div>
         </div>
+        <br></br>
+        Special Instructions:
+        <br></br>
+        <input type="text" onChange={handleOther} />
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onClose}>
@@ -308,7 +316,7 @@ function Item({
     } else if (_id === "60dcf48854590a0017027dd5") { //vegan flava cafe - Too Tasty Walnut Tacos
       setShowModal5(true);
       return;
-    } 
+    }
     addToCart();
   }
 
@@ -323,6 +331,7 @@ function Item({
         dip: dip,
         spicy: isSpicy,
         vegetarian: isVegetarian,
+        other: other,
         //samosabucket - momo dumplings
         //Samosabucket - chicken tikka
         side: side,
@@ -407,7 +416,7 @@ function Item({
             <p className="subtitle is-5 has-text-right">{price.toLocaleString('en-US', {
               style: 'currency',
               currency: 'USD',
-              })}
+            })}
             </p>
           </div>
         </div>

@@ -54,6 +54,7 @@ router.post("/", auth, async (req, res) => {
     const side = req.body.side;
     const mainItem = req.body.mainItem;
     const tacoShell = req.body.tacoShell;
+    const other = req.body.other;
     if (itemId === null || qty === null) {
       throw { message: "Error adding to cart" };
     }
@@ -69,9 +70,9 @@ router.post("/", auth, async (req, res) => {
     }
 
     if (itemId == "60e3a111557dc20017253d84") { //samosabucket - momo dumplings
-      user.cart = [...user.cart, { itemId: itemId, qty: qty, price: item.price, dip: dip, spicy: spicy, vegetarian: vegetarian, item_name: item.name, delivery_time: delivery_time}];
+      user.cart = [...user.cart, { itemId: itemId, qty: qty, price: item.price, dip: dip, spicy: spicy, vegetarian: vegetarian, item_name: item.name, delivery_time: delivery_time, other: other,}];
     } else if (itemId == "60e3a121557dc20017253d87") { //samosabucket - momo dumplings
-      user.cart = [...user.cart, { itemId: itemId, qty: qty, price: item.price, dip: dip, spicy: spicy, vegetarian: vegetarian, item_name: item.name, delivery_time: delivery_time}];
+      user.cart = [...user.cart, { itemId: itemId, qty: qty, price: item.price, dip: dip, spicy: spicy, vegetarian: vegetarian, item_name: item.name, delivery_time: delivery_time, other: other,}];
     } else if (itemId == "60ebcb00cd34f90017ac82c7") { //samosabucket - chicken tikka
       user.cart = [...user.cart, { itemId: itemId, qty: qty, price: item.price, side: side, spicy: spicy, vegetarian: vegetarian, item_name: item.name, delivery_time: delivery_time}];
     } else if (itemId == "60f892c28b572f0017ef81ed") { //samosabucket - samosa
