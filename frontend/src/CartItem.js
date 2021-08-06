@@ -1,14 +1,21 @@
 import Axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
-function CartItem({ itemId, qty: quantity, delivery_time: dtime, refreshCart, spicy, side, vegetarian, dip, mainItem: mitem, tacoShell: tshell, ...misc }) {
+function CartItem(x) {
 
   const [item, setItem] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(true); //assume logged in already.
-  let qty = quantity;
-  let delivery_time = dtime;
-  let mainItem = mitem;
-  let tacoShell = tshell;
+  const [showDetails, setShowDetails] = useState(false);
+  const itemId = x.itemId;
+  const refreshCart = x.refreshCart;
+  const spicy = x.spicy;
+  const side = x.side;
+  const vegetarian = x.vegetarian;
+  const dip = x.dip;
+  let qty = x.qty;
+  let delivery_time = x.delivery_time;
+  let mainItem = x.mainItem;
+  let tacoShell = x.tacoShell;
 
   const deleteItem = () => {
     Axios.delete(process.env.REACT_APP_BACKEND_API + "/cart/" + itemId, {
@@ -95,39 +102,74 @@ function CartItem({ itemId, qty: quantity, delivery_time: dtime, refreshCart, sp
                 </select>
               </div>
             </div>
-            <div className="select">
-              <select onChange={handleDTime} selected={delivery_time} value={delivery_time}>
+            <div className="control pb-3">
+              <div className="select">
+                <select onChange={handleDTime} selected={delivery_time} value={delivery_time}>
 
-                  {(() =>  {
+                  {(() => {
                     if (itemId === "60dfa9e2bf70ac0017547f2f" || itemId === "60dfa9b6bf70ac0017547f2e") { //cakes and bakes
-                      return ( 
+                      return (
                         <React.Fragment>
                           <option> Saturday, August 07 </option>
                           <option> Sunday, August 08 </option>
                         </React.Fragment>
-                    );
+                      );
                     } else if (itemId === "60dcf34954590a0017027dd4" || itemId === "60dcf48854590a0017027dd5") { //vegan flava
-                      return ( 
+                      return (
                         <React.Fragment>
                           <option> Friday, August 06 </option>
                         </React.Fragment>
-                    );
-                    } 
+                      );
+                    }
                     else { //samosabucket
                       return (
                         <React.Fragment>
                           <option> Sunday, August 08 </option>
                         </React.Fragment>
                       )
-                    } 
-                  })()}             
-              </select>
+                    }
+                  })()}
+                </select>
+              </div>
+            </div>
+            <div className="columns">
+              <div className={"column"}>
+                <button className="button is-info " onClick={() => setShowDetails(!showDetails)}>
+                  {showDetails ? "HIDE DETAILS" : "SHOW DETAILS"}
+                </button>
+              </div>
             </div>
           </div>
+          {showDetails && (
+            <div className="">
+              <table className="table is-fullwidth p-2">
+                <thead>
+                  <tr>
+                    <th>Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr key={itemId}>
+                    {optionsReturn(x)}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
       </div>
     )
   );
+  function optionsReturn(x) {
+    let optStr = "";
+    Object.keys(x).map((key) => {
+      if (key !== "delivery_time" && key !== "_id" && key !== "itemId" && key !== "qty" && key !== "price" && key !== "item_name"
+        && key !== "refreshCart") {
+        optStr += key + ": " + x[key] + ", ";
+      }
+    });
+    return <td>{optStr.length ? optStr.substring(0, optStr.length - 2) : ""}</td>;
+  }
 }
 
 export default CartItem;
