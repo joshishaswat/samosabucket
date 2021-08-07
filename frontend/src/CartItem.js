@@ -102,8 +102,7 @@ function CartItem({ itemId, qty: quantity, delivery_time: dtime, refreshCart, sp
                     if (itemId === "60dfa9e2bf70ac0017547f2f" || itemId === "60dfa9b6bf70ac0017547f2e") { //cakes and bakes
                       return ( 
                         <React.Fragment>
-                          <option> Saturday, August 07 </option>
-                          <option> Sunday, August 08 </option>
+                          <option> Sunday, August 15 </option>
                         </React.Fragment>
                     );
                     } else if (itemId === "60dcf34954590a0017027dd4" || itemId === "60dcf48854590a0017027dd5") { //vegan flava
@@ -116,7 +115,7 @@ function CartItem({ itemId, qty: quantity, delivery_time: dtime, refreshCart, sp
                     else { //samosabucket
                       return (
                         <React.Fragment>
-                          <option> Sunday, August 08 </option>
+                          <option> Sunday, August 15 </option>
                         </React.Fragment>
                       )
                     } 
