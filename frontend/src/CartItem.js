@@ -102,20 +102,21 @@ function CartItem({ itemId, qty: quantity, delivery_time: dtime, refreshCart, sp
                     if (itemId === "60dfa9e2bf70ac0017547f2f" || itemId === "60dfa9b6bf70ac0017547f2e") { //cakes and bakes
                       return ( 
                         <React.Fragment>
-                          <option> Sunday, August 29 </option>
+                          <option> Sunday, September 12 </option>
                         </React.Fragment>
                     );
                     } else if (itemId === "60dcf34954590a0017027dd4" || itemId === "60dcf48854590a0017027dd5") { //vegan flava
                       return ( 
                         <React.Fragment>
-                          <option> Friday, August 20 </option>
+                          <option> Sunday, September 12 </option>
                         </React.Fragment>
                     );
                     } 
                     else { //samosabucket
                       return (
                         <React.Fragment>
-                          <option> Sunday, August 29 </option>
+                          <option> Saturday, September 11 </option>
+                          <option> Sunday, September 12 </option>
                         </React.Fragment>
                       )
                     } 
